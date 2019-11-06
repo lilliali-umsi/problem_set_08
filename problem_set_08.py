@@ -65,8 +65,7 @@ with open(csv_name, 'r') as file_obj:
             info_data.append(row)
         i += 1
 
-#header = next(reader)
-#info_header.append(header)
+print(info_header)
 
 # BEGIN TEST FOR PROBLEM 1 (Uncomment me when you're ready!)
 print(f"\n\nProblem 1 test: {info_data}")
@@ -88,13 +87,15 @@ print(f"\n\nProblem 1 test: {info_data}")
 # {'name': 'Nick Fury', 'powers': ['weapons_master', 'longevity']}
 
 # BEGIN PROBLEM 2 (can be accomplished in 3-5 lines of code)
-
-powers = None
+import json
+file_name = "sh_powers.json"
+with open(file_name, 'r') as file_obj:
+    powers = json.load(file_obj)
 
 # END PROBLEM 2
 
 # BEGIN TEST FOR PROBLEM 2 (Uncomment me when you're ready!)
-#print(f"\n\nProblem 2 test: {powers['Nick Fury']}")
+print(f"\n\nProblem 2 test: {powers['Nick Fury']}")
 # END TEST FOR PROBLEM 2
 
 

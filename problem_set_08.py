@@ -55,12 +55,15 @@ import csv
 csv_name = "sh_info.csv"
 info_header = []
 info_data = []
+hero_info = []
 with open(csv_name, 'r') as file_obj:
     reader = csv.reader(file_obj)
     header = next(reader)
     info_header.append(header)
     for row in reader:
-        info_data.append(row)
+        hero_info.append(row)
+
+info_data.append(hero_info)
 
 # BEGIN TEST FOR PROBLEM 1 (Uncomment me when you're ready!)
 print(f"\n\nProblem 1 test: {info_data}")

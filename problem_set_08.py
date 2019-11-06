@@ -59,6 +59,8 @@ with open(csv_name, 'r') as file_obj:
     reader = csv.reader(file_obj)
     i = 0
     for row in reader:
+        if i == 0:
+            info_header.append(row)
         if i > 0:
             info_data.append(row)
         i += 1

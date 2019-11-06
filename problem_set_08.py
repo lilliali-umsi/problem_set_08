@@ -116,13 +116,15 @@ print(f"\n\nProblem 2 test: {powers['Nick Fury']}")
 
 # BEGIN PROBLEM 3 (can be accomplished in 3 - 5 lines of code)
 
-def get_info():
-    pass
+def get_info(row, header):
+    new_dict = {header[i]: row[i] for i in range(len(header))}
+    
+    return new_dict
 
 # END PROBLEM 3
 
 # BEGIN TEST FOR PROBLEM 3 (Uncomment me when you're ready!)
-#print(f"\n\nProblem 3 test: {get_info(info_data[27],info_header)}")
+print(f"\n\nProblem 3 test: {get_info(info_data[27],info_header)}")
 # END TEST FOR PROBLEM 3
 
 

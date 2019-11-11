@@ -231,13 +231,21 @@ print(f"\n\nProblem 4 test: {heroes['Nick Fury']}")
 
 # BEGIN PROBLEM 5 (can be accomplished in 6-9 lines of code)
 
-def get_team():
-    pass
+def get_team(teamname, default = heroes):
+    teammates = []
+    for key, value in heroes.items():
+        for k, v in value.items():
+            if k == 'team':
+                if v == teamname:   
+                    teammates.append(key)     
+                    team_tuple = tuple([teamname, teammates])
+    return team_tuple
+   
 
 # END PROBLEM 5
 
 # BEGIN TEST FOR PROBLEM 5 (Uncomment me when you're ready!)
-#print(f"\n\nProblem 5 test: {get_team('Defenders')}")
+print(f"\n\nProblem 5 test: {get_team('Defenders')}")
 # END TEST FOR PROBLEM 5
 
 

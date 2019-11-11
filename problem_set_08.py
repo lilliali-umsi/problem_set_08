@@ -124,7 +124,7 @@ def get_info(row, header):
 # END PROBLEM 3
 
 # BEGIN TEST FOR PROBLEM 3 (Uncomment me when you're ready!)
-print(f"\n\nProblem 3 test: {get_info(info_data[27],info_header)}")
+#print(f"\n\nProblem 3 test: {get_info(info_data[27],info_header)}")
 # END TEST FOR PROBLEM 3
 
 
@@ -181,16 +181,32 @@ heroes = {} # This should be your first line of code for this problem.
 # Write your first for-loop below (see the instructions for clarification):
 
 
+for line in info_data:   
+    heroes.setdefault(line[0], get_info(line, info_header))
+print(heroes)
+
+
 # Add the list of powers with another for-loop:
+
+for key, value in powers.items():
+    if key in heroes:
+        for key, value in heroes.items():
+            value["powers"] = powers.get(key)
+        #heroes.update(powers)
+       
+#print(heroes)
 
 
 # Finally write out the whole dictionary as a .json file:
-
+json_heroes = json.dumps(heroes)
+file_name = 'heroes.json'
+with open(file_name, 'w') as file_obj:
+    file_obj.write(json_heroes)
 
 # END PROBLEM 4
 
 # BEGIN TEST FOR PROBLEM 4 (Uncomment me when you're ready!)
-#print(f"\n\nProblem 4 test: {heroes['Nick Fury']}")
+print(f"\n\nProblem 4 test: {heroes['Nick Fury']}")
 # END TEST FOR PROBLEM 4
 
 

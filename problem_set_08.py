@@ -268,13 +268,27 @@ print(f"\n\nProblem 5 test: {get_team('Defenders')}")
 # Your resultant list should include 'Vision', 'Thing', and two others.
 
 # BEGIN PROBLEM 6 (can be completed with 5-8 lines of code)
-
+super_strong_heroes = {}
 nyc_strong_heroes = [] # This should be the first line of code you write for this problem.
+#print(heroes)
+for key, value in heroes.items():
+    for k, v in value.items():
+            if k == 'powers':
+                for item in v:
+                    if item == 'super_strength':
+                        super_strong_heroes[key] = value
+for key, value in super_strong_heroes.items():
+    for k, v in value.items():
+        if k == 'base':
+            if 'New York City' in v:
+                    nyc_strong_heroes.append(key)
 
+
+                        
 # END PROBLEM 6
 
 # BEGIN TEST FOR PROBLEM 6 (Uncomment me when you're ready!)
-#print(f"\n\nProblem 6 test: {nyc_strong_heroes}\n")
+print(f"\n\nProblem 6 test: {nyc_strong_heroes}\n")
 # END TEST FOR PROBLEM 6
 
 
